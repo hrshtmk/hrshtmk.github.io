@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshit - Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        @font-face {
+            font-family: 'Hagrid Text';
+            src: url('Hagrid-Text-Extrabold-trial.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        :root {
+            --bg-color: #080808;
+            --text-main: #f0f0f0;
+            --text-dim: #666666;
+            --font-name: 'Hagrid Text', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        body.cobalt-mode {
+            --bg-color: #002fa7; 
+            --text-main: #ffffff;
+            --text-dim: #93c5fd; 
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden; 
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+            transition: background-color 0.8s cubic-bezier(0.25, 1, 0.5, 1), color 0.4s ease;
+        }
+
+        .portfolio-container {
+            position: relative;
+            width: 100%;
+            max-width: 950px;
+            padding: 0 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2.2rem;
+        }
+
+        .left-content-wrapper {
+            max-width: 55%;
+            display: flex;
+            flex-direction: column;
+            gap: 2.2rem;
+        }
+
+        h1 {
+            font-family: var(--font-name); 
+            font-size: 1.5rem; 
+            font-weight: 700;
+            letter-spacing: -0.2px;
+            margin-bottom: 0.4rem;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        p {
+            font-size: 0.95rem;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        .bio-section p {
+            margin-bottom: 1.2rem;
+        }
+        .bio-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .links-column {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem; 
+        }
+
+        .right-layer {
+            position: absolute;
+            right: 8rem;
+            top: 10rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 400;
+            transition: opacity 0.2s, color 0.4s ease;
+        }
+
+        a .dance-char {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 1px;
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+
+        .footer-section {
+            display: inline-flex;
+            flex-direction: column;
+            align-self: flex-start; 
+            margin-top: 0.8rem; 
+            gap: 0.4rem;
+            text-transform: uppercase; 
+        }
+
+        #live-timestamp {
+            white-space: nowrap; 
+        }
+
+        .spread-motto {
+            display: flex;
+            justify-content: space-between;
+            width: 100%; 
+            color: var(--text-dim);
+            transition: color 0.4s ease;
+        }
+
+        .easter-egg-trigger {
+            cursor: default; 
+            user-select: none; 
+        }
+
+        sup {
+            font-size: 0.65rem;
+            text-transform: lowercase; 
+        }
+
+        .dance-char {
+            display: inline-block;
+            transform-origin: center;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        @media (max-height: 550px) {
+            html, body {
+                overflow-y: auto;
+                height: auto;
+                padding: 2rem 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            html, body {
+                overflow-y: auto;
+                height: auto;
+                align-items: flex-start;
+                padding: 3rem 0;
+            }
+            .portfolio-container {
+                padding: 0 2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 2.5rem;
+            }
+            .left-content-wrapper {
+                max-width: 100%;
+                gap: 2.5rem;
+            }
+            .right-layer {
+                position: static;
+                display: flex;
+                flex-direction: column;
+                gap: 2.5rem;
+            }
+            
+            .header-section { order: 1; }
+            .projects-link-item { order: 2; }
+            .bio-section { order: 3; }
+            .links-column { order: 4; }
+            .writings-link-item { order: 5; }
+            .misc-link-item { order: 6; }
+            .footer-section { order: 7; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="portfolio-container">
+        
+        <div class="left-content-wrapper">
+            <div class="header-section">
+                <h1 class="js-dance-container">Harshit Mukhedkar</h1>
+                <div class="subtitle js-dance-container">COMPUTING & ELECTRONICS</div>
+            </div>
+
+            <div class="bio-section">
+                <p class="js-dance-container">I'm an ECE student building software and<br>intelligent systems.</p>
+                <p class="js-dance-container">Currently honing skills in ML, embedded and<br>low-level systems.</p>
+            </div>
+
+            <div class="links-column js-dance-container">
+                <a href="wip.html">resume</a>
+                <a href="mailto:harshit007k@gmail.com">harshit007k@gmail.com</a>
+                <a href="https://linkedin.com/in/harshitmk" target="_blank">linkedin.com/in/harshitmk</a>
+                <a href="https://github.com/hrshtmk" target="_blank">github.com/hrshtmk</a>
+                <a href="https://x.com/hrshtmk" target="_blank">x.com/hrshtmk</a>
+            </div>
+
+            <div class="footer-section">
+                <div id="live-timestamp">18:48PM &nbsp;9<sup>th</sup> MAY 2026</div>
+                <div class="spread-motto easter-egg-trigger" id="motto-click">
+                    <span>F</span><span>E</span><span>S</span><span>T</span><span>I</span><span>N</span><span>A</span>&nbsp;<span>L</span><span>E</span><span>N</span><span>T</span><span>E</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-layer">
+            <div class="projects-link-item js-dance-container">
+                <a href="wip.html">Projects</a>
+            </div>
+            <div class="writings-link-item js-dance-container">
+                <a href="wip.html">Writings</a>
+            </div>
+            <div class="misc-link-item js-dance-container">
+                <a href="wip.html">Misc.</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let clockCanUpdate = true;
+
+        function updateLiveTime() {
+            if (!clockCanUpdate) return; 
+            
+            const now = new Date();
+            let hours = now.getHours();
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            
+            const day = now.getDate();
+            const getOrdinal = (d) => {
+                if (d > 3 && d < 21) return 'th';
+                switch (d % 10) {
+                    case 1:  return 'st';
+                    case 2:  return 'nd';
+                    case 3:  return 'rd';
+                    default: return 'th';
+                }
+            };
+
+            const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+            const month = months[now.getMonth()];
+            const year = now.getFullYear();
+
+            const timestampHTML = `${hours}:${minutes}${ampm} &nbsp;${day}<sup>${getOrdinal(day)}</sup> ${month} ${year}`;
+            document.getElementById('live-timestamp').innerHTML = timestampHTML;
+        }
+
+
+        const targetedContainers = document.querySelectorAll('.js-dance-container');
+        
+        function processNodeText(node) {
+            if (node.nodeType === Node.TEXT_NODE) {
+                if (node.textContent.trim() === "") return;
+                
+                const txt = node.textContent;
+                const wrapper = document.createElement('span');
+                let htmlStr = "";
+                
+                for (let char of txt) {
+                    if (char.trim() === "") {
+                        htmlStr += char;
+                    } else {
+                        htmlStr += `<span class="dance-char">${char}</span>`;
+                    }
+                }
+                wrapper.innerHTML = htmlStr;
+                node.parentNode.replaceChild(wrapper, node);
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+                if (node.tagName === 'SUP') {
+                    node.classList.add('dance-char');
+                    return;
+                }
+                const children = Array.from(node.childNodes);
+                children.forEach(processNodeText);
+            }
+        }
+        
+
+        targetedContainers.forEach(container => processNodeText(container));
+
+        let characterInstances = [];
+        let isDancing = false;
+        let lastTime = 0;
+
+
+        function buildPhysicsArray() {
+            const physicsChars = document.querySelectorAll('.dance-char');
+            characterInstances = [];
+            physicsChars.forEach(charEl => {
+                characterInstances.push({
+                    element: charEl,
+                    x: 0, y: 0, rot: 0,
+                    vx: (Math.random() - 0.5) * 18,
+                    vy: (Math.random() - 0.5) * 15,
+                    vRot: (Math.random() - 0.5) * 45,
+                    ax: (Math.random() - 0.5) * 2,
+                    ay: (Math.random() - 0.5) * 2
+                });
+            });
+        }
+
+
+        buildPhysicsArray();
+
+        function incrementalPhysicsLoop(currentTime) {
+            if (!isDancing) return;
+            if (!lastTime) lastTime = currentTime;
+            
+            const dt = Math.min((currentTime - lastTime) / 1000, 0.1);
+            lastTime = currentTime;
+
+            characterInstances.forEach(c => {
+                c.vx += (Math.random() - 0.5) * 8 * dt;
+                c.vy += (Math.random() - 0.5) * 8 * dt;
+                
+                c.x += c.vx * dt;
+                c.y += c.vy * dt;
+                c.rot += c.vRot * dt;
+
+                c.element.style.transform = `translate(${c.x}px, ${c.y}px) rotate(${c.rot}deg)`;
+            });
+
+            requestAnimationFrame(incrementalPhysicsLoop);
+        }
+
+        document.getElementById('motto-click').addEventListener('click', () => {
+            const hasClass = document.body.classList.toggle('cobalt-mode');
+            isDancing = hasClass;
+
+            if (isDancing) {
+
+                clockCanUpdate = false;
+                
+                processNodeText(document.getElementById('live-timestamp'));
+
+                buildPhysicsArray();
+
+                lastTime = 0; 
+                requestAnimationFrame(incrementalPhysicsLoop);
+            } else {
+
+                characterInstances.forEach(c => {
+                    c.x = 0; c.y = 0; c.rot = 0;
+                    c.vx = (Math.random() - 0.5) * 18;
+                    c.vy = (Math.random() - 0.5) * 15;
+                    c.element.style.transform = 'translate(0px, 0px) rotate(0deg)';
+                });
+
+                setTimeout(() => {
+                    if (!isDancing) {
+                        clockCanUpdate = true;
+                        updateLiveTime();
+                        buildPhysicsArray();
+                    }
+                }, 800);
+            }
+        });
+
+        updateLiveTime();
+        setInterval(updateLiveTime, 1000);
+    </script>
+</body>
+</html>
