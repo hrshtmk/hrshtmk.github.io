@@ -8,8 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/terminus-font@4.49.3/terminus.css">    
     <style>
         @font-face {
             font-family: 'Hagrid Text';
@@ -22,8 +21,9 @@
             --bg-color: #000000;
             --text-main: #f0f0f0;
             --text-dim: #666666;
-            --font-name: 'Hagrid Text', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-mono: 'JetBrains Mono', monospace;
+            --font-name: 'Terminus', 'Terminus TTF', monospace;
+            --font-mono: 'Terminus', 'Terminus TTF', monospace;
+        }
         }
 
         body.cobalt-mode {
@@ -42,12 +42,12 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             font-family: var(--font-mono);
-            font-size: 0.95rem;
+            font-size: 1rem;
             height: 100vh;
             width: 100vw;
             overflow: hidden; 
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: none;
+            -moz-osx-font-smoothing: unset;
             display: flex;
             align-items: center; 
             justify-content: center;
